@@ -1,0 +1,13 @@
+<div>
+    <h2>crear materia</h2>
+    <div class="mb-3">
+        <label for="nombreMateria" class="form-label">Nombre materia</label>
+        <input type="text" class="form-control" id="nombreMateria" [(ngModel)]="materia">
+        <span *ngIf="materia.length > 50">La materia que quieres ingresar excede los 50 caracteres</span>
+    </div>
+    <div class="mb-3">
+        <label for="cupoMateria" class="form-label">Cupo</label>
+        <input type="number" class="form-control" id="cupoMateria" [(ngModel)]="cupo">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="guardarMateria()">Crear materia</button>
+</div>

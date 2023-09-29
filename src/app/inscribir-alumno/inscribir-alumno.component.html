@@ -1,0 +1,16 @@
+<div>
+    <div class="mb-3">
+      <label for="nombreMateria" class="form-label">Nombre alumno</label>
+      <input type="text" class="form-control" id="nombreMateria" [(ngModel)]="nombreAlumno">
+      <span *ngIf="nombreAlumno.length > 200">No debe tener más de 200 caracteres</span>
+    </div>
+    <div class="mb-3">
+      <label for="materiaSeleccionada" class="form-label">Materias</label>
+      <select id="materiaSeleccionada" class="form-select" [(ngModel)]="materiaSeleccionada">
+        <option>Seleccione una materia a inscribir</option>
+        <option *ngFor="let materia of materiasCargadas" [value]="materia.nombre">{{ materia.nombre }}</option>
+      </select>
+    </div>
+    <button class="btn btn-primary" (click)="guardarAlumno()">Guardar alumno</button>
+  </div>
+  
